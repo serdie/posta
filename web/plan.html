@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Plan familiar de emergencia — Posta</title>
+  <meta name="description" content="Crea en 10 minutos el plan de emergencia de tu casa: puntos de encuentro, contactos y tarjetas para la cartera. Se guarda solo en tu dispositivo y funciona sin conexión.">
+  <meta name="theme-color" content="#b3261e">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <script type="module" src="/src/main.ts"></script>
+</head>
+<body>
+<!-- @include header -->
+<main id="contenido" data-plan>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">Herramienta · funciona sin conexión</p>
+      <h1>Vuestro plan, <em>antes de necesitarlo.</em></h1>
+      <p class="lede">Diez minutos hoy ahorran horas de angustia mañana. Rellenadlo juntos, imprimid una tarjeta para cada persona y haced un simulacro con Posta.</p>
+    </div>
+  </section>
+
+  <div class="wrap plan-layout">
+    <form class="plan-form" data-form novalidate>
+      <fieldset>
+        <legend>Vuestra casa</legend>
+        <div class="fields">
+          <div class="field full">
+            <label for="household">Nombre del plan</label>
+            <input id="household" name="household" autocomplete="off" maxlength="80" placeholder="Familia García, Piso 3ºB, Clase 4ºA…">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Personas</legend>
+        <p class="field-help">El apodo es el nombre que cada persona usará en Posta. Acordadlo ahora para reconoceros en la malla.</p>
+        <div data-members></div>
+        <button class="btn small ghost" type="button" data-act="add-member">+ Añadir persona</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Puntos de encuentro</legend>
+        <p class="field-help">Uno cerca de casa (por si hay que salir del edificio) y otro fuera del barrio (por si no se puede volver).</p>
+        <div class="fields">
+          <div class="field"><label for="near-name">Cerca de casa</label><input id="near-name" data-path="nearPoint.name" maxlength="80" placeholder="La fuente de la plaza"></div>
+          <div class="field"><label for="near-address">Cómo llegar</label><input id="near-address" data-path="nearPoint.address" maxlength="600" placeholder="Salir por el portal y a la izquierda"></div>
+          <div class="field"><label for="far-name">Fuera del barrio</label><input id="far-name" data-path="farPoint.name" maxlength="80" placeholder="Casa de la abuela, polideportivo…"></div>
+          <div class="field"><label for="far-address">Dirección</label><input id="far-address" data-path="farPoint.address" maxlength="600"></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Contacto lejano</legend>
+        <p class="field-help">En una catástrofe local suele ser más fácil llamar a otra ciudad que dentro de la zona. Todos avisan a esta persona, y ella reparte las noticias.</p>
+        <div class="fields">
+          <div class="field"><label for="out-name">Nombre</label><input id="out-name" data-path="outsideContact.name" maxlength="80" autocomplete="off"></div>
+          <div class="field"><label for="out-phone">Teléfono</label><input id="out-phone" data-path="outsideContact.phone" maxlength="32" inputmode="tel" autocomplete="off"></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Teléfonos útiles</legend>
+        <p class="field-help">El 112 funciona en toda la Unión Europea, incluso sin saldo. Añadid el colegio, el centro de salud, el trabajo…</p>
+        <div data-numbers></div>
+        <button class="btn small ghost" type="button" data-act="add-number">+ Añadir teléfono</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Qué hace cada uno</legend>
+        <div class="fields">
+          <div class="field full">
+            <label for="notes">Instrucciones</label>
+            <textarea id="notes" data-path="notes" maxlength="1800" placeholder="Quién recoge a los niños del colegio. Qué hacemos con el perro. Dónde están la linterna, el botiquín y los documentos. Si no hay respuesta en Posta, ir al punto de encuentro cercano a la hora en punto."></textarea>
+          </div>
+          <div class="field">
+            <label for="drill">Último simulacro con Posta</label>
+            <input id="drill" type="date" data-path="lastDrill">
+          </div>
+        </div>
+      </fieldset>
+    </form>
+
+    <aside class="plan-side" aria-label="Estado del plan y acciones">
+      <div class="score" data-score aria-live="polite">
+        <div class="score-ring">
+          <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--line)" stroke-width="3.5"/><circle data-ring cx="18" cy="18" r="15.9" fill="none" stroke="var(--ok)" stroke-width="3.5" stroke-dasharray="0 100" stroke-linecap="round"/></svg>
+          <div><b data-score-num>0 %</b><span>preparados</span></div>
+        </div>
+        <ul data-checklist></ul>
+      </div>
+      <div class="actions">
+        <button class="btn primary" type="button" data-act="print">Imprimir tarjetas</button>
+        <button class="btn" type="button" data-act="export">Guardar copia</button>
+        <label class="btn ghost" for="import-file">Abrir copia</label>
+        <input id="import-file" class="sr-only" type="file" accept="application/json,.json" data-act="import">
+        <button class="btn danger small" type="button" data-act="wipe">Borrar todo</button>
+      </div>
+      <p class="privacy-note"><b>Solo en tu dispositivo.</b> El plan se guarda en este navegador y no se envía a ningún sitio: esta web no tiene servidor de datos, ni cookies, ni analítica. Para pasarlo a otro móvil, usa «Guardar copia».</p>
+      <p class="field-help" data-saved aria-live="polite"></p>
+    </aside>
+
+    <section class="cards-preview" data-cards aria-hidden="true">
+      <!-- Tarjetas generadas para imprimir -->
+    </section>
+    <p class="print-title" data-print-title>Plan de emergencia</p>
+    <p class="print-help">Recorta por el borde de cada tarjeta. Guárdala en la cartera, la mochila o la funda del móvil. Revisad el plan cada seis meses.</p>
+  </div>
+
+  <template id="member-tpl">
+    <div class="member" data-member>
+      <div class="member-head"><b data-member-title>Persona</b><button class="btn small ghost" type="button" data-act="remove-member">Quitar</button></div>
+      <div class="fields">
+        <div class="field"><label data-for="name">Nombre</label><input data-key="name" maxlength="80" autocomplete="off"></div>
+        <div class="field"><label data-for="phone">Teléfono</label><input data-key="phone" maxlength="32" inputmode="tel" autocomplete="off"></div>
+        <div class="field"><label data-for="nick">Apodo en Posta</label><input data-key="nick" maxlength="80" autocomplete="off" placeholder="ana-casa"></div>
+        <div class="field"><label data-for="care">Salud y cuidados</label><input data-key="care" maxlength="600" autocomplete="off" placeholder="Alergias, medicación, movilidad…"></div>
+        <label class="toggle full"><input type="checkbox" data-key="appReady"> Tiene Posta (o Bitchat) instalada y la hemos probado juntos</label>
+      </div>
+    </div>
+  </template>
+  <template id="number-tpl">
+    <div class="fields" data-number>
+      <div class="field"><label data-for="label">Para qué</label><input data-key="label" maxlength="80" autocomplete="off"></div>
+      <div class="field"><label data-for="phone">Teléfono</label><input data-key="phone" maxlength="32" inputmode="tel" autocomplete="off"></div>
+    </div>
+  </template>
+</main>
+<!-- @include footer -->
+</body>
+</html>

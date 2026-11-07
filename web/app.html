@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Instalar la app — Posta</title>
+  <meta name="description" content="Cómo instalar Posta en Android y cómo hablar con Posta desde iPhone usando Bitchat. Estado real de cada versión.">
+  <meta name="theme-color" content="#b3261e">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <script type="module" src="/src/main.ts"></script>
+</head>
+<body>
+<!-- @include header -->
+<main id="contenido">
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">La app</p>
+      <h1>Instálala hoy, <em>no cuando falte la red.</em></h1>
+      <p class="lede">Posta funciona en Android y se entiende con Bitchat en iPhone. Aquí tienes el estado real de cada versión, sin adornos.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap grid-2">
+      <article class="card">
+        <span class="num">Android · 8.0 o superior</span>
+        <h3>Posta para Android</h3>
+        <p><span class="pill warn">Beta en pruebas</span></p>
+        <p>La versión 0.1.0 compila y pasa las pruebas automáticas, pero aún tiene que probarse en teléfonos reales (dos, tres y más en cadena, sin cobertura) antes de publicarla. No queremos que nadie confíe en una app que no hemos visto funcionar.</p>
+        <p data-release-android>Todavía no hay descarga pública. Cuando la haya, aparecerá aquí con su huella SHA-256 para que puedas comprobar que el archivo es auténtico.</p>
+        <p>Mientras tanto, puedes instalar <a href="https://github.com/permissionlesstech/bitchat-android/releases" rel="noopener">Bitchat para Android</a>: Posta y Bitchat se comunican entre sí.</p>
+      </article>
+      <article class="card">
+        <span class="num">iPhone y iPad</span>
+        <h3>En iPhone, usa Bitchat</h3>
+        <p><span class="pill ok">Disponible</span></p>
+        <p>Todavía no existe Posta para iPhone. <a href="https://apps.apple.com/app/bitchat-mesh/id6748219622" rel="noopener">Bitchat en la App Store</a> es gratuita y habla exactamente el mismo protocolo: podrás escribir a quien use Posta y viceversa.</p>
+        <p>Los mensajes de estado de Posta (🟢 ESTOY BIEN / I'M OK…) llegan a Bitchat como texto normal, así que se leen perfectamente. Desde iPhone puedes escribirlos a mano con el mismo formato.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Qué añade Posta</p>
+          <h2>Bitchat, preparada <em>para emergencias.</em></h2>
+        </div>
+        <p>Posta parte del código libre de Bitchat Android (GPL-3.0), que ya resuelve lo difícil: la malla Bluetooth y el cifrado. Encima, Posta se centra en lo que necesita una familia cuando se cae la red.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card"><span class="num">Nuevo</span><h3>Estados de un toque</h3><p>Estoy bien, voy al punto de encuentro, necesito ayuda, urgencia médica. Con confirmación, nota opcional y aviso de a quién llega.</p></article>
+        <article class="card"><span class="num">Nuevo</span><h3>Resaltado en el chat</h3><p>Los estados se ven en color en la conversación, para encontrarlos de un vistazo en un canal con mucho movimiento.</p></article>
+        <article class="card"><span class="num">Nuevo</span><h3>Plan y guía</h3><p>El plan familiar y la guía de esta web, pensados para usarlos junto con la app antes de una emergencia.</p></article>
+        <article class="card"><span class="num">De Bitchat</span><h3>Malla Bluetooth</h3><p>Hasta 7 saltos, deduplicación de mensajes y entrega diferida cuando la persona vuelve a estar al alcance.</p></article>
+        <article class="card"><span class="num">De Bitchat</span><h3>Cifrado Noise</h3><p>Mensajes privados cifrados de extremo a extremo con Noise XX, X25519, ChaCha20-Poly1305 y SHA-256.</p></article>
+        <article class="card"><span class="num">De Bitchat</span><h3>Borrado de pánico</h3><p>Tres toques en el logotipo y se borra todo de inmediato: mensajes, claves e identidad.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section paper-2">
+    <div class="wrap prose">
+      <p class="eyebrow">Para comprobar una descarga</p>
+      <h2>Cómo saber que el APK es auténtico</h2>
+      <p>Cuando publiquemos versiones, cada una irá acompañada de su huella SHA-256. Antes de instalar un APK que te hayan pasado, puedes comprobarla:</p>
+      <ul>
+        <li>En un ordenador: <code>sha256sum posta.apk</code> (Linux, macOS) o <code>certutil -hashfile posta.apk SHA256</code> (Windows).</li>
+        <li>Compara el resultado con el que aparece en esta página o en el repositorio. Si no coincide, no lo instales.</li>
+      </ul>
+      <p>Posta también permite pasar la app de un Android a otro sin internet, desde su propio menú: el teléfono crea una red wifi local y quien la recibe descarga el APK desde una página, sin internet.</p>
+    </div>
+  </section>
+</main>
+<!-- @include footer -->
+</body>
+</html>

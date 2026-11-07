@@ -1,0 +1,11 @@
+{
+  "name": "Posta — Plan familiar y comunicación sin red",
+  "short_name": "Posta",
+  "lang": "es",
+  "start_url": "./plan.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4eee3",
+  "theme_color": "#b3261e",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

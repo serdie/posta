@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Posta — Que no se corte la voz cuando se corta la red</title>
+  <meta name="description" content="Posta es una app libre y gratuita para hablar con la gente cercana sin internet ni cobertura, de teléfono en teléfono por Bluetooth. Con plan familiar de emergencia.">
+  <meta name="theme-color" content="#b3261e">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <script type="module" src="/src/main.ts"></script>
+</head>
+<body>
+<!-- @include header -->
+<main id="contenido">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Comunicación sin red · libre y gratuita</p>
+        <h1>Cuando se corta la red, <em>que no se corte la voz.</em></h1>
+        <p class="lede">Posta lleva tus mensajes de teléfono en teléfono por Bluetooth, sin internet, sin cobertura y sin cuentas. Como las antiguas postas: cada persona cercana acerca el mensaje un poco más.</p>
+        <div class="actions">
+          <a class="btn primary" href="./plan.html">Haz vuestro plan familiar</a>
+          <a class="btn" href="#simulador">Mira cómo viaja un mensaje</a>
+        </div>
+        <div class="hero-meta" aria-label="Compromisos">
+          <span>Sin número ni correo</span>
+          <span>Mensajes privados cifrados</span>
+          <span>Habla con Bitchat</span>
+        </div>
+      </div>
+
+      <div class="phone" role="img" aria-label="Ejemplo de la app Posta: varias personas envían su estado tras un apagón">
+        <div class="phone-screen" aria-hidden="true">
+          <div class="phone-top"><span>Sin servicio</span><span>Bluetooth ●</span></div>
+          <div class="phone-title"><b>#malla</b><small>6 cerca · 3 saltos</small></div>
+          <div class="phone-feed">
+            <div class="msg"><span class="who">&lt;marta&gt;</span> ¿Alguien sabe si el metro funciona?<span class="meta">hace 4 min · vía 2 saltos</span></div>
+            <div class="msg status"><span class="who">&lt;abuelo_paco&gt;</span> 🟢 ESTOY BIEN / I'M OK — en casa, con linterna<span class="meta">hace 2 min · vía 3 saltos</span></div>
+            <div class="msg status help"><span class="who">&lt;lucia_3B&gt;</span> 🟠 NECESITO AYUDA / I NEED HELP — ascensor parado, portal 3<span class="meta">hace 1 min · directo</span></div>
+            <div class="msg"><span class="who">&lt;vecino_juan&gt;</span> @lucia_3B voy para allá 🏃<span class="meta">ahora · directo</span></div>
+          </div>
+          <div class="phone-chips"><span>🟢 Estoy bien</span><span>📍 Voy al punto</span><span>🟠 Ayuda</span></div>
+          <div class="phone-input">escribe un mensaje…</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="status-strip">
+    <div class="wrap">
+      <div><b>0 servidores</b><small>Teléfono a teléfono</small></div>
+      <div><b>0 cuentas</b><small>Ni teléfono, ni correo</small></div>
+      <div><b>7 saltos</b><small>Máximo por mensaje</small></div>
+      <div><b>0 €</b><small>Sin anuncios, para siempre</small></div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Cómo funciona</p>
+          <h2>Una red que <em>formamos entre todos.</em></h2>
+        </div>
+        <p>No hace falta antena, ni wifi, ni internet. Hace falta gente cerca con la app instalada. Cuantas más personas la tengan en un barrio, en un colegio o en una familia, más lejos llegan los mensajes.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <span class="num">01</span>
+          <h3>Tu teléfono encuentra a los cercanos</h3>
+          <p>Por Bluetooth de bajo consumo, cada móvil detecta a otros con Posta o Bitchat a unas decenas de metros. Sin intercambiar tu número ni tu nombre real.</p>
+        </article>
+        <article class="card">
+          <span class="num">02</span>
+          <h3>Los mensajes saltan de uno en uno</h3>
+          <p>Si tu destinatario está lejos, el mensaje pasa por los teléfonos que hay en medio, hasta 7 saltos. Los intermedios no pueden leer los mensajes privados: van cifrados.</p>
+        </article>
+        <article class="card">
+          <span class="num">03</span>
+          <h3>Un toque para decir «estoy bien»</h3>
+          <p>Botones de estado listos para usar: «Estoy bien», «Voy al punto de encuentro», «Necesito ayuda», «Urgencia médica». Siempre con confirmación, para que nadie los mande sin querer.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band" id="simulador">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Simulador</p>
+          <h2>Mira cómo viaja <em>un mensaje.</em></h2>
+        </div>
+        <p>Cada punto es un teléfono con Posta. Toca uno para elegir quién envía y otro para elegir quién recibe. Prueba a quitar gente o a meter edificios: así entenderás por qué conviene que la tenga mucha gente a tu alrededor.</p>
+      </div>
+      <div class="sim" data-sim>
+        <div class="sim-stage">
+          <svg viewBox="0 0 800 500" role="img" aria-labelledby="sim-title" data-sim-svg>
+            <title id="sim-title">Mapa de teléfonos conectados por Bluetooth</title>
+          </svg>
+          <div class="sim-legend" aria-hidden="true">
+            <span><i class="lg-src"></i>Envía</span>
+            <span><i class="lg-dst"></i>Recibe</span>
+            <span><i class="lg-relay"></i>Ha reenviado</span>
+            <span><i class="lg-wall"></i>Edificio</span>
+          </div>
+        </div>
+        <div class="sim-panel">
+          <div>
+            <label for="sim-count">Teléfonos con Posta <output data-out="count">26</output></label>
+            <input id="sim-count" type="range" min="2" max="45" value="26" data-in="count">
+          </div>
+          <div>
+            <label for="sim-range">Alcance de cada teléfono <output data-out="range">medio</output></label>
+            <input id="sim-range" type="range" min="1" max="3" value="2" step="1" data-in="range">
+          </div>
+          <label class="check"><input type="checkbox" data-in="obstacles" checked> Hay edificios en medio</label>
+          <div class="actions">
+            <button class="btn primary small" type="button" data-act="send">Enviar mensaje</button>
+            <button class="btn small" type="button" data-act="shuffle">Mover a la gente</button>
+          </div>
+          <div class="sim-result" data-result aria-live="polite">
+            <b>Elige quién envía</b>
+            <span class="sim-hint">Toca un teléfono del mapa (o pulsa «Enviar mensaje» para un ejemplo).</span>
+          </div>
+          <p class="sim-hint">Simulación simplificada. En la vida real el alcance cambia con el modelo de teléfono, las paredes, los cuerpos, la batería y el sistema operativo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Hoy, sin rodeos</p>
+          <h2>Qué existe <em>y qué no.</em></h2>
+        </div>
+        <p>Preferimos que confíes en Posta por decirte la verdad, no por prometerte imposibles. Esta tabla se actualiza con cada versión.</p>
+      </div>
+      <table class="truth">
+        <thead><tr><th scope="col">Pieza</th><th scope="col">Estado</th><th scope="col">Detalle</th></tr></thead>
+        <tbody>
+          <tr><td>App para Android</td><td><span class="pill warn">Beta en pruebas</span></td><td>Compila y pasa los tests. Construida sobre Bitchat Android 2.2.0 (GPL-3.0). Falta validarla en teléfonos reales antes de publicarla.</td></tr>
+          <tr><td>iPhone</td><td><span class="pill warn">Usa Bitchat</span></td><td>Todavía no hay Posta para iPhone. Mientras tanto, instala <a href="https://apps.apple.com/app/bitchat-mesh/id6748219622" rel="noopener">Bitchat</a>: habla el mismo protocolo y se comunica con Posta.</td></tr>
+          <tr><td>Mensajes privados cifrados</td><td><span class="pill ok">Heredado de Bitchat</span></td><td>Protocolo Noise (XX) con claves que solo están en los teléfonos. Revisado por la comunidad de Bitchat, sin auditoría independiente publicada.</td></tr>
+          <tr><td>Estados de emergencia</td><td><span class="pill ok">Nuevo en Posta</span></td><td>«Estoy bien», «Voy al punto», «Necesito ayuda», «Urgencia médica». Viajan como texto normal: quien use Bitchat también los lee.</td></tr>
+          <tr><td>Plan familiar</td><td><span class="pill ok">Disponible ya</span></td><td>En esta web. Funciona sin conexión y no sale de tu navegador.</td></tr>
+          <tr><td>Auditoría de seguridad independiente</td><td><span class="pill no">Pendiente</span></td><td>No usar Posta para situaciones en las que tu vida dependa de la confidencialidad hasta que exista.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section paper-2">
+    <div class="wrap">
+      <div class="callout">
+        <div class="icon" aria-hidden="true">!</div>
+        <div>
+          <h2 class="h2-sm">Antes de confiar en ella, <em>conoce sus límites.</em></h2>
+          <ul>
+            <li><b>La entrega no está garantizada.</b> Si no hay suficientes teléfonos cerca, el mensaje no llega. Que no recibas respuesta no significa que alguien esté mal.</li>
+            <li><b>El canal público es público.</b> Cualquiera cerca puede leerlo. Para cosas privadas, usa los mensajes privados.</li>
+            <li><b>No hay anonimato absoluto.</b> Alguien con equipo especializado podría detectar que hay un teléfono emitiendo cerca. Y quien tenga tu móvil desbloqueado puede leer tus conversaciones.</li>
+            <li><b>Posta no sustituye al 112</b> ni a los avisos oficiales. Es una ayuda más cuando todo lo demás falla.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Preparaos hoy</p>
+          <h2>Una app no basta: <em>hace falta un plan.</em></h2>
+        </div>
+        <p>En una emergencia nadie piensa con claridad. Lo que funciona es lo que ya habéis hablado antes: dónde os encontráis, a quién avisáis, quién recoge a quién.</p>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <span class="num">Herramienta</span>
+          <h3>Plan familiar en 10 minutos</h3>
+          <p>Apuntad quién sois, vuestros puntos de encuentro y un contacto lejano. Imprimid una tarjeta para cada cartera o mochila. Se guarda solo en tu dispositivo.</p>
+          <a class="btn primary small" href="./plan.html">Empezar el plan</a>
+        </article>
+        <article class="card">
+          <span class="num">Guía</span>
+          <h3>Antes, durante y después</h3>
+          <p>Cómo instalar y probar Posta en familia, cómo ahorrar batería, qué mensajes mandar y cuándo, y cómo hacer un simulacro con los niños.</p>
+          <a class="btn small" href="./guia.html">Leer la guía</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Preguntas</p>
+          <h2>Hablemos <em>claro.</em></h2>
+        </div>
+      </div>
+      <div class="faq">
+        <details><summary>¿Por qué se llama Posta?</summary><div><p>Por las postas de correo de España: lugares donde los mensajeros cambiaban de caballo para que las cartas llegaran más lejos. En Posta, cada teléfono cercano es una de esas paradas.</p></div></details>
+        <details><summary>¿Qué relación tiene con Bitchat?</summary><div><p>Posta está construida sobre el código abierto de Bitchat Android (licencia GPL-3.0) y habla su mismo protocolo, así que puedes escribir a cualquiera que use Bitchat en Android o iPhone. Posta añade una capa pensada para emergencias: estados de un toque, textos en español claro y herramientas de preparación familiar. Agradecemos y citamos el trabajo original.</p></div></details>
+        <details><summary>¿Hasta dónde llega un mensaje?</summary><div><p>De un teléfono a otro, normalmente unas decenas de metros, según el modelo y los obstáculos. Con 7 saltos como máximo, en un barrio con bastante gente puede cruzar varias calles. En el campo y sin nadie cerca, solo llega a quien esté a tu lado.</p></div></details>
+        <details><summary>¿Gasta mucha batería?</summary><div><p>Bluetooth de bajo consumo está pensado para gastar poco, pero mantener la malla activa en segundo plano consume. En la <a href="./guia.html#bateria">guía</a> explicamos cómo alargar la batería en una emergencia.</p></div></details>
+        <details><summary>¿Quién puede leer mis mensajes?</summary><div><p>Los mensajes privados van cifrados de extremo a extremo: solo los lee la persona destinataria, aunque pasen por otros teléfonos. Los mensajes del canal público los puede leer cualquiera que esté cerca. Más detalles en <a href="./privacidad.html">Privacidad</a>.</p></div></details>
+        <details><summary>¿Cuánto cuesta?</summary><div><p>Nada. Ni ahora ni después. Sin anuncios, sin suscripciones, sin vender datos. Es software libre: cualquiera puede revisar el código, mejorarlo o distribuirlo.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+</main>
+<!-- @include footer -->
+</body>
+</html>

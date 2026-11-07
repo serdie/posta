@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Privacidad y límites — Posta</title>
+  <meta name="description" content="Qué datos guarda Posta, qué protege el cifrado, qué no puede proteger nadie y qué hace esta web con tu información (nada).">
+  <meta name="theme-color" content="#b3261e">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <script type="module" src="/src/main.ts"></script>
+</head>
+<body>
+<!-- @include header -->
+<main id="contenido">
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">Privacidad</p>
+      <h1>Lo que protege Posta <em>y lo que no.</em></h1>
+      <p class="lede">La privacidad es el corazón del proyecto. Por eso te contamos también lo que ninguna app puede prometer.</p>
+    </div>
+  </section>
+
+  <div class="wrap with-toc">
+    <nav class="toc" aria-label="En esta página">
+      <a href="#web">Esta web</a>
+      <a href="#app">La app</a>
+      <a href="#protege">Qué protege</a>
+      <a href="#no-protege">Qué no protege</a>
+      <a href="#codigo">Código y licencia</a>
+    </nav>
+    <article class="prose">
+      <h2 id="web">Esta web no recoge nada</h2>
+      <ul>
+        <li><b>Sin cookies, sin analítica, sin anuncios</b> y sin recursos de terceros: las fuentes y todo el código se sirven desde aquí mismo. Ningún tercero se entera de que la visitas.</li>
+        <li>El <b>plan familiar</b> se guarda solo en el almacenamiento de tu navegador. No hay servidor que lo reciba. Puedes borrarlo con el botón «Borrar todo» o borrando los datos del sitio.</li>
+        <li>Si guardas una copia del plan, es un archivo en tu dispositivo con datos personales de tu familia: trátalo como tratarías una agenda.</li>
+        <li>La web funciona sin conexión una vez visitada, gracias a una caché local que tampoco envía nada.</li>
+      </ul>
+
+      <h2 id="app">Qué guarda la app</h2>
+      <ul>
+        <li><b>No pide cuenta, número de teléfono ni correo.</b> Tu identidad es un par de claves que se crea en tu teléfono.</li>
+        <li>Tu apodo es el que tú elijas. Puedes cambiarlo cuando quieras.</li>
+        <li>Las conversaciones se guardan cifradas en tu teléfono. El borrado de pánico (tres toques en el logotipo) elimina mensajes, claves e identidad.</li>
+        <li>Android exige el permiso de ubicación para buscar dispositivos Bluetooth. La malla Bluetooth no usa ni envía tu ubicación. Los canales por zona (geohash) son opcionales y usan internet.</li>
+        <li>No hay servidores de Posta. No hay nada que podamos entregar a nadie porque no tenemos nada.</li>
+      </ul>
+
+      <h2 id="protege">Qué protege el cifrado</h2>
+      <p>Los <b>mensajes privados</b> se cifran de extremo a extremo con el protocolo Noise (patrón XX, X25519, ChaCha20-Poly1305, SHA-256). Los teléfonos que reenvían el mensaje en medio no pueden leerlo. Para asegurarte de que hablas con quien crees, compara la huella de seguridad en persona.</p>
+      <p>Los <b>canales con contraseña</b> cifran los mensajes del canal para quien conozca la contraseña.</p>
+
+      <h2 id="no-protege">Qué no puede proteger nadie</h2>
+      <ul>
+        <li><b>El canal público es público.</b> Cualquiera cerca con la app puede leerlo.</li>
+        <li><b>Las señales de radio se pueden detectar.</b> Alguien con el equipo adecuado puede saber que hay un teléfono emitiendo cerca, aunque no pueda leer lo que dice.</li>
+        <li><b>Metadatos.</b> Quien reenvía un mensaje privado no lo lee, pero puede ver que existe tráfico, su tamaño aproximado y cuándo pasa.</li>
+        <li><b>El acceso físico</b> a un teléfono desbloqueado permite ver las conversaciones. Usa bloqueo de pantalla.</li>
+        <li><b>El sistema operativo</b> y las apps maliciosas instaladas en el propio teléfono quedan fuera del control de Posta.</li>
+        <li><b>Auditoría.</b> El cifrado lo hereda de Bitchat y ha sido revisado por su comunidad, pero Posta todavía no tiene una auditoría independiente. Si tu seguridad física depende de la confidencialidad absoluta, ten esto en cuenta.</li>
+      </ul>
+      <p>Nadie que diga la verdad puede prometer seguridad o anonimato absolutos. Lo que sí podemos prometer es no recoger nada, explicarte los riesgos y publicar todo el código para que cualquiera lo revise.</p>
+
+      <h2 id="codigo">Código y licencia</h2>
+      <p>Posta es software libre bajo la licencia <b>GPL-3.0</b>, la misma que Bitchat Android, de la que deriva. Cualquiera puede leer el código, mejorarlo y redistribuirlo con la misma libertad. Agradecemos el trabajo de las personas que mantienen <a href="https://github.com/permissionlesstech/bitchat-android" rel="noopener">Bitchat Android</a> y <a href="https://github.com/permissionlesstech/bitchat" rel="noopener">Bitchat para iOS</a>.</p>
+    </article>
+  </div>
+</main>
+<!-- @include footer -->
+</body>
+</html>

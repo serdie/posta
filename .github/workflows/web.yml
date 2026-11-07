@@ -1,0 +1,38 @@
+name: web
+
+on:
+  push:
+    branches: [main]
+    paths: ["web/**", ".github/workflows/web.yml"]
+  pull_request:
+    paths: ["web/**", ".github/workflows/web.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - name: Tipos y tests
+        run: npm run check
+      - name: Compilación de producción
+        run: npm run build
+      - name: Sin recursos de terceros en el HTML generado
+        run: |
+          if grep -RInE '(src|href)="https?://' dist --include=*.html | grep -vE 'href="https://(github\.com|apps\.apple\.com)/'; then
+            echo "::error::La web no debe cargar recursos de terceros"; exit 1
+          fi
+      - name: CSP presente en todas las páginas
+        run: |
+          for f in dist/*.html; do grep -q 'Content-Security-Policy' "$f" || { echo "::error file=$f::Falta la CSP"; exit 1; }; done
