@@ -2,13 +2,16 @@
 
 **Que no se corte la voz cuando se corta la red.**
 
+🌐 Web: **https://serdie.github.io/posta/** · 📲 App Android (beta): **[descargar la última versión](https://github.com/serdie/posta-android/releases/latest)**
+
 Posta es una app libre y gratuita para hablar con la gente cercana sin internet ni cobertura móvil: los mensajes viajan de teléfono en teléfono por Bluetooth, como las antiguas postas de correo. Está pensada para familias, colegios y comunidades que quieren estar preparadas antes de una emergencia.
 
 - Sin cuenta, sin número de teléfono, sin correo.
 - Sin anuncios, sin suscripciones, sin analítica, sin servidores.
 - Mensajes privados cifrados de extremo a extremo (Noise XX).
 - Compatible con **Bitchat** en Android e iPhone.
-- Estados de emergencia de un toque: 🟢 Estoy bien · 📍 Voy al punto de encuentro · 🟠 Necesito ayuda · 🔴 Urgencia médica.
+- Estados de emergencia de un toque: 🟢 Estoy bien · 📍 Voy al punto de encuentro · 🟠 Necesito ayuda · 🔴 Urgencia médica, con ubicación GPS opcional (funciona sin red) y envío también por SMS.
+- Señales SOS en Morse con linterna, pantalla y sonido, y botón al 112.
 
 ## Qué hay en este repositorio
 
@@ -16,6 +19,7 @@ Posta es una app libre y gratuita para hablar con la gente cercana sin internet 
 web/                 Web pública (Vite + TypeScript, sin dependencias de terceros en ejecución)
   index.html         Portada con simulador interactivo de la malla
   plan.html          Plan familiar de emergencia (solo en tu dispositivo, funciona sin conexión, imprime tarjetas)
+  kit.html           Mochila y casa para 72 horas (lista interactiva y cálculo de agua y comida)
   guia.html          Guía antes / durante / después
   app.html           Instalación y estado real de cada versión
   privacidad.html    Qué protege Posta y qué no
@@ -37,7 +41,7 @@ cd mobile/android
 
 El APK queda en `mobile/android/app/build/outputs/apk/debug/`. En redes con inspección TLS, Java puede necesitar `JAVA_TOOL_OPTIONS=-Djavax.net.ssl.trustStoreType=Windows-ROOT` (Windows).
 
-**Estado:** compila y pasa sus tests; falta la validación en teléfonos físicos antes de publicar ninguna descarga. En iPhone, usa Bitchat: habla el mismo protocolo.
+**Estado:** beta pública 0.1.0, firmada y descargable. Falta la validación en una red real de teléfonos. En iPhone, usa Bitchat: habla el mismo protocolo.
 
 ## La web
 
