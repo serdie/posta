@@ -30,14 +30,17 @@ Base: `upstream/main` en `2fc6f47` (6-nov-2026). Cambios de Posta:
    - `ChatScreen.kt`, `MeshPeerListSheet.kt`: conectan la barra al envío existente (`ChatViewModel.sendMessage`).
    - `ChatUIUtils.kt`: resalta en color la cabecera de los estados recibidos.
    - Tests: `app/src/test/java/com/bitchat/android/posta/PostaStatusTest.kt` (7 casos).
-3. **Página de descarga por wifi local** (`hotspot/ApkWebServer.kt`): textos y nombre de archivo con la marca Posta.
+3. **Ubicación, SOS y SMS** (`posta/PostaLocation*.kt`, `posta/Sos*.kt`): coordenadas GPS opcionales leídas una vez bajo demanda; baliza SOS Morse (linterna, pantalla ≤ 2 Hz, tono); envío por SMS vía `ACTION_SENDTO` (sin permiso de SMS); botón `ACTION_DIAL tel:112`. Tests: `PostaLocationAndSosTest` (8).
+4. **Actualizaciones propias**: `ApkDownloadSource.kt` y `GitHubReleaseClient.kt` apuntan a `serdie/posta-android`; el certificado de Posta se fija en `gradle.properties`.
+5. **Página de descarga por wifi local** (`hotspot/ApkWebServer.kt`): textos y nombre de archivo con la marca Posta.
 
 ### Qué debe vigilar la auditoría
 
 - Que un mensaje cualquiera no pueda hacerse pasar por un estado de forma engañosa en la interfaz (el parser exige el prefijo exacto al inicio).
 - Que el diálogo describa correctamente el destino en cada contexto (privado, canal con contraseña, canal geohash, malla pública).
 - Que no se haya alterado nada de cifrado, transporte, identidad ni almacenamiento.
-- La función de descarga de APK (`util/ApkDownloadSource.kt`, `GitHubReleaseClient.kt`) sigue apuntando a las versiones de Bitchat hasta que Posta publique las suyas. Es compatible pero es otra app: **pendiente de decidir**.
+- Que la ubicación nunca se lea sin la acción explícita del usuario y que el diálogo deje claro si el aviso es público.
+- Que la pantalla SOS no parpadee por encima de 3 Hz (riesgo de fotosensibilidad).
 
 ## 4. Estado de las pruebas (7-nov-2026)
 

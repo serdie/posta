@@ -24,7 +24,7 @@
         <p class="lede">Posta lleva tus mensajes de teléfono en teléfono por Bluetooth, sin internet, sin cobertura y sin cuentas. Como las antiguas postas: cada persona cercana acerca el mensaje un poco más.</p>
         <div class="actions">
           <a class="btn primary" href="./plan.html">Haz vuestro plan familiar</a>
-          <a class="btn" href="#simulador">Mira cómo viaja un mensaje</a>
+          <a class="btn" href="./app.html">Descargar la app</a>
         </div>
         <div class="hero-meta" aria-label="Compromisos">
           <span>Sin número ni correo</span>
@@ -82,7 +82,7 @@
         <article class="card">
           <span class="num">03</span>
           <h3>Un toque para decir «estoy bien»</h3>
-          <p>Botones de estado listos para usar: «Estoy bien», «Voy al punto de encuentro», «Necesito ayuda», «Urgencia médica». Siempre con confirmación, para que nadie los mande sin querer.</p>
+          <p>«Estoy bien», «Voy al punto de encuentro», «Necesito ayuda», «Urgencia médica», con tu posición GPS si quieres. Y señales SOS con linterna, pantalla y sonido para que te encuentren.</p>
         </article>
       </div>
     </div>
@@ -145,11 +145,12 @@
       <table class="truth">
         <thead><tr><th scope="col">Pieza</th><th scope="col">Estado</th><th scope="col">Detalle</th></tr></thead>
         <tbody>
-          <tr><td>App para Android</td><td><span class="pill warn">Beta en pruebas</span></td><td>Compila y pasa los tests. Construida sobre Bitchat Android 2.2.0 (GPL-3.0). Falta validarla en teléfonos reales antes de publicarla.</td></tr>
+          <tr><td>App para Android</td><td><span class="pill warn">Beta pública</span></td><td><a href="./app.html">Descargable y firmada</a>. Construida sobre Bitchat Android 2.2.0 (GPL-3.0). Falta validarla en una red real de teléfonos: pruébala con los tuyos.</td></tr>
           <tr><td>iPhone</td><td><span class="pill warn">Usa Bitchat</span></td><td>Todavía no hay Posta para iPhone. Mientras tanto, instala <a href="https://apps.apple.com/app/bitchat-mesh/id6748219622" rel="noopener">Bitchat</a>: habla el mismo protocolo y se comunica con Posta.</td></tr>
           <tr><td>Mensajes privados cifrados</td><td><span class="pill ok">Heredado de Bitchat</span></td><td>Protocolo Noise (XX) con claves que solo están en los teléfonos. Revisado por la comunidad de Bitchat, sin auditoría independiente publicada.</td></tr>
           <tr><td>Estados de emergencia</td><td><span class="pill ok">Nuevo en Posta</span></td><td>«Estoy bien», «Voy al punto», «Necesito ayuda», «Urgencia médica». Viajan como texto normal: quien use Bitchat también los lee.</td></tr>
-          <tr><td>Plan familiar</td><td><span class="pill ok">Disponible ya</span></td><td>En esta web. Funciona sin conexión y no sale de tu navegador.</td></tr>
+          <tr><td>Ubicación GPS, señales SOS y SMS</td><td><span class="pill ok">Nuevo en Posta</span></td><td>Coordenadas sin internet en los avisos de ayuda, SOS con linterna, pantalla y sonido, botón al 112 y envío también por SMS.</td></tr>
+          <tr><td>Plan familiar y mochila</td><td><span class="pill ok">Disponible ya</span></td><td>En esta web. Funcionan sin conexión y no salen de tu navegador.</td></tr>
           <tr><td>Auditoría de seguridad independiente</td><td><span class="pill no">Pendiente</span></td><td>No usar Posta para situaciones en las que tu vida dependa de la confidencialidad hasta que exista.</td></tr>
         </tbody>
       </table>
@@ -182,7 +183,7 @@
         </div>
         <p>En una emergencia nadie piensa con claridad. Lo que funciona es lo que ya habéis hablado antes: dónde os encontráis, a quién avisáis, quién recoge a quién.</p>
       </div>
-      <div class="grid-2">
+      <div class="grid-3">
         <article class="card">
           <span class="num">Herramienta</span>
           <h3>Plan familiar en 10 minutos</h3>
@@ -194,6 +195,12 @@
           <h3>Antes, durante y después</h3>
           <p>Cómo instalar y probar Posta en familia, cómo ahorrar batería, qué mensajes mandar y cuándo, y cómo hacer un simulacro con los niños.</p>
           <a class="btn small" href="./guia.html">Leer la guía</a>
+        </article>
+        <article class="card">
+          <span class="num">Lista</span>
+          <h3>Mochila para 72 horas</h3>
+          <p>Qué tener en casa para aguantar tres días sin luz, agua ni red. Calcula el agua y la comida que necesitáis.</p>
+          <a class="btn small" href="./kit.html">Preparar la mochila</a>
         </article>
       </div>
     </div>
@@ -213,6 +220,7 @@
         <details><summary>¿Hasta dónde llega un mensaje?</summary><div><p>De un teléfono a otro, normalmente unas decenas de metros, según el modelo y los obstáculos. Con 7 saltos como máximo, en un barrio con bastante gente puede cruzar varias calles. En el campo y sin nadie cerca, solo llega a quien esté a tu lado.</p></div></details>
         <details><summary>¿Gasta mucha batería?</summary><div><p>Bluetooth de bajo consumo está pensado para gastar poco, pero mantener la malla activa en segundo plano consume. En la <a href="./guia.html#bateria">guía</a> explicamos cómo alargar la batería en una emergencia.</p></div></details>
         <details><summary>¿Quién puede leer mis mensajes?</summary><div><p>Los mensajes privados van cifrados de extremo a extremo: solo los lee la persona destinataria, aunque pasen por otros teléfonos. Los mensajes del canal público los puede leer cualquiera que esté cerca. Más detalles en <a href="./privacidad.html">Privacidad</a>.</p></div></details>
+        <details><summary>¿Y si no hay nadie con la app cerca?</summary><div><p>Por eso Posta no es la única herramienta. Puedes enviar el mismo aviso por SMS, que sale con muy poca señal, llamar al 112 desde la app, o usar las señales SOS con la linterna y el sonido. En la <a href="./guia.html#canales">guía</a> repasamos todas las alternativas: walkie-talkies, radio, SOS por satélite y más.</p></div></details>
         <details><summary>¿Cuánto cuesta?</summary><div><p>Nada. Ni ahora ni después. Sin anuncios, sin suscripciones, sin vender datos. Es software libre: cualquiera puede revisar el código, mejorarlo o distribuirlo.</p></div></details>
       </div>
     </div>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Mochila y casa para 72 horas — Posta</title>
+  <meta name="description" content="Lista interactiva para preparar la mochila de emergencia y la casa para 72 horas sin luz, agua ni red. Calcula el agua y la comida para tu familia.">
+  <meta name="theme-color" content="#b3261e">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <script type="module" src="/src/main.ts"></script>
+</head>
+<body>
+<!-- @include header -->
+<main id="contenido" data-kit>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">Herramienta · 72 horas</p>
+      <h1>Tres días <em>por vuestra cuenta.</em></h1>
+      <p class="lede">Protección Civil y la Unión Europea recomiendan que cada casa pueda aguantar al menos 72 horas sin ayuda exterior. Marca lo que ya tenéis; se guarda solo en este dispositivo.</p>
+    </div>
+  </section>
+
+  <div class="wrap kit-layout">
+    <div data-kit-list class="kit-list"></div>
+
+    <aside class="plan-side" aria-label="Cálculo y progreso">
+      <div class="score">
+        <div class="fields">
+          <div class="field"><label for="kit-people">Personas</label><input id="kit-people" type="number" min="1" max="20" inputmode="numeric"></div>
+          <div class="field"><label for="kit-pets">Mascotas</label><input id="kit-pets" type="number" min="0" max="20" inputmode="numeric"></div>
+        </div>
+        <dl class="kit-needs">
+          <dt>Agua para 3 días</dt><dd data-kit-water>—</dd>
+          <dt>Comida</dt><dd data-kit-meals>—</dd>
+        </dl>
+        <p class="field-help">Unos 3 litros por persona y día, más uno por mascota. Renovad el agua y la comida cada año.</p>
+        <div class="kit-progress" aria-hidden="true"><span data-kit-bar></span></div>
+        <p aria-live="polite"><b data-kit-progress>—</b></p>
+      </div>
+      <div class="actions">
+        <button class="btn primary" type="button" data-act="kit-print">Imprimir lista</button>
+        <button class="btn danger small" type="button" data-act="kit-reset">Desmarcar todo</button>
+      </div>
+      <p class="privacy-note"><b>Solo en tu dispositivo.</b> Esta lista no se envía a ningún sitio.</p>
+    </aside>
+  </div>
+</main>
+<!-- @include footer -->
+</body>
+</html>

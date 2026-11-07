@@ -24,6 +24,7 @@ const fullPlan = (): Plan => ({
   farPoint: { name: "Polideportivo norte", address: "" },
   outsideContact: { name: "Tía Carmen", phone: "+34 900 000 000" },
   lastDrill: "2026-10-01",
+  backup: { walkie: "Canal 7, subtono 12", radio: "Radio pública local", checkIn: "A las en punto, 10 minutos" },
 });
 
 describe("emptyPlan", () => {
@@ -78,6 +79,20 @@ describe("parsePlan", () => {
 
   it("descarta fechas de simulacro mal formadas", () => {
     expect(parsePlan({ version: 1, lastDrill: "ayer" }).lastDrill).toBe("");
+  });
+});
+
+describe("canales alternativos", () => {
+  it("un plan antiguo sin backup se importa con campos vacíos", () => {
+    const p = parsePlan({ version: 1, household: "x" });
+    expect(p.backup).toEqual({ walkie: "", radio: "", checkIn: "" });
+  });
+
+  it("recorta y limpia los canales alternativos", () => {
+    const p = parsePlan({ version: 1, backup: { walkie: "a".repeat(200), radio: 5, checkIn: "bc" } });
+    expect(p.backup.walkie).toHaveLength(LIMITS.short);
+    expect(p.backup.radio).toBe("");
+    expect(p.backup.checkIn).toBe("bc");
   });
 });
 

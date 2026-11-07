@@ -57,3 +57,6 @@ if (document.querySelector("[data-sim]")) {
 if (document.querySelector("[data-plan]")) {
   void import("./plan/ui").then((m) => m.mountPlan(document.querySelector<HTMLElement>("[data-plan]")!));
 }
+if (document.querySelector("[data-kit]")) {
+  void import("./kit/ui").then((m) => m.mountKit(document.querySelector<HTMLElement>("[data-kit]")!));
+}

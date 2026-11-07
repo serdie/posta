@@ -100,6 +100,7 @@ export default defineConfig({
         guia: page("guia.html"),
         app: page("app.html"),
         privacidad: page("privacidad.html"),
+        kit: page("kit.html"),
       },
     },
   },

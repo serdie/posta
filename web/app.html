@@ -28,10 +28,18 @@
       <article class="card">
         <span class="num">Android · 8.0 o superior</span>
         <h3>Posta para Android</h3>
-        <p><span class="pill warn">Beta en pruebas</span></p>
-        <p>La versión 0.1.0 compila y pasa las pruebas automáticas, pero aún tiene que probarse en teléfonos reales (dos, tres y más en cadena, sin cobertura) antes de publicarla. No queremos que nadie confíe en una app que no hemos visto funcionar.</p>
-        <p data-release-android>Todavía no hay descarga pública. Cuando la haya, aparecerá aquí con su huella SHA-256 para que puedas comprobar que el archivo es auténtico.</p>
-        <p>Mientras tanto, puedes instalar <a href="https://github.com/permissionlesstech/bitchat-android/releases" rel="noopener">Bitchat para Android</a>: Posta y Bitchat se comunican entre sí.</p>
+        <p><span class="pill warn">Beta pública · 0.1.0</span></p>
+        <p>Compila, pasa las pruebas automáticas y está firmada. <b>Todavía no se ha validado en una red real de teléfonos</b>: instálala ya para prepararte y probarla con tu familia, pero no dependas solo de ella.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/serdie/posta-android/releases/latest/download/posta-android-universal.apk" rel="noopener">Descargar APK (52 MB)</a>
+          <a class="btn small" href="https://github.com/serdie/posta-android/releases/latest/download/posta-android-arm64-v8a.apk" rel="noopener">Versión ligera (20 MB, móviles de 64 bits)</a>
+        </div>
+        <p class="field-help">Android pedirá permiso para instalar apps de fuera de Google Play. Cuando Posta se actualice, la propia app comprobará que la nueva versión está firmada por nosotros.</p>
+        <details class="hashes"><summary>Huellas para comprobar la descarga</summary>
+          <p>Certificado de firma (SHA-256):<br><code>22d444e0a02556d25c579c029c9ba1abb57fa1f66873f82e38002b775a5c4985</code></p>
+          <p>posta-android-universal.apk (0.1.0):<br><code>88025607c197566baa3f467f393927246efdb399869d4a6986ea1d9d8fc86683</code></p>
+          <p>posta-android-arm64-v8a.apk (0.1.0):<br><code>5c130a006526ba0b0f16476ad3d75e17a9db4349474daf8ceba5aa572a99ff1b</code></p>
+        </details>
       </article>
       <article class="card">
         <span class="num">iPhone y iPad</span>
@@ -55,7 +63,9 @@
       <div class="grid-3">
         <article class="card"><span class="num">Nuevo</span><h3>Estados de un toque</h3><p>Estoy bien, voy al punto de encuentro, necesito ayuda, urgencia médica. Con confirmación, nota opcional y aviso de a quién llega.</p></article>
         <article class="card"><span class="num">Nuevo</span><h3>Resaltado en el chat</h3><p>Los estados se ven en color en la conversación, para encontrarlos de un vistazo en un canal con mucho movimiento.</p></article>
-        <article class="card"><span class="num">Nuevo</span><h3>Plan y guía</h3><p>El plan familiar y la guía de esta web, pensados para usarlos junto con la app antes de una emergencia.</p></article>
+        <article class="card"><span class="num">Nuevo</span><h3>Tu posición, sin internet</h3><p>Los avisos de ayuda pueden llevar tus coordenadas GPS. Quien las recibe las abre con un toque en cualquier mapa, incluso sin conexión.</p></article>
+        <article class="card"><span class="num">Nuevo</span><h3>Señales SOS</h3><p>SOS en Morse con la linterna, con la pantalla o con un tono de silbato, y botón directo al 112. Para que te encuentren si estás atrapado.</p></article>
+        <article class="card"><span class="num">Nuevo</span><h3>También por SMS</h3><p>Cualquier estado se puede enviar además por SMS, que sale con muy poca señal cuando no hay llamadas ni datos.</p></article>
         <article class="card"><span class="num">De Bitchat</span><h3>Malla Bluetooth</h3><p>Hasta 7 saltos, deduplicación de mensajes y entrega diferida cuando la persona vuelve a estar al alcance.</p></article>
         <article class="card"><span class="num">De Bitchat</span><h3>Cifrado Noise</h3><p>Mensajes privados cifrados de extremo a extremo con Noise XX, X25519, ChaCha20-Poly1305 y SHA-256.</p></article>
         <article class="card"><span class="num">De Bitchat</span><h3>Borrado de pánico</h3><p>Tres toques en el logotipo y se borra todo de inmediato: mensajes, claves e identidad.</p></article>
@@ -67,7 +77,7 @@
     <div class="wrap prose">
       <p class="eyebrow">Para comprobar una descarga</p>
       <h2>Cómo saber que el APK es auténtico</h2>
-      <p>Cuando publiquemos versiones, cada una irá acompañada de su huella SHA-256. Antes de instalar un APK que te hayan pasado, puedes comprobarla:</p>
+      <p>Cada versión publicada va acompañada de su huella SHA-256 (arriba y en GitHub). Antes de instalar un APK que te hayan pasado, puedes comprobarla:</p>
       <ul>
         <li>En un ordenador: <code>sha256sum posta.apk</code> (Linux, macOS) o <code>certutil -hashfile posta.apk SHA256</code> (Windows).</li>
         <li>Compara el resultado con el que aparece en esta página o en el repositorio. Si no coincide, no lo instales.</li>

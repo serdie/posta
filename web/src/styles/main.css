@@ -336,3 +336,34 @@ legend { font: 600 1.3rem var(--serif); padding: 0 8px; margin-left: -8px; }
 .h2-sm { font-size: clamp(1.7rem, 3.4vw, 2.4rem); margin-bottom: 12px; }
 .foot-about { margin-top: 12px; max-width: 40ch; }
 .site-footer .foot-note { display: block; margin-top: 32px; font-size: .88rem; }
+
+/* ============ Mochila (kit) ============ */
+.kit-layout { display: grid; grid-template-columns: 1fr 340px; gap: 32px; padding: 40px 0 96px; align-items: start; }
+@media (max-width: 980px) { .kit-layout { grid-template-columns: 1fr; } .kit-layout .plan-side { order: -1; position: static; } }
+.kit-group { margin-bottom: 20px; }
+.kit-item { display: grid; grid-template-columns: 26px 1fr; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); cursor: pointer; align-items: start; }
+.kit-item:first-of-type { border-top: 0; }
+.kit-item input { width: 22px; height: 22px; margin-top: 2px; accent-color: var(--ok); }
+.kit-item b { display: block; font-weight: 700; }
+.kit-item small { display: block; color: var(--ink-3); font-size: .9rem; margin-top: 2px; }
+.kit-item:has(input:checked) b { color: var(--ink-3); text-decoration: line-through; text-decoration-color: var(--ok); }
+.kit-needs { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; margin: 16px 0 8px; }
+.kit-needs dt { color: var(--ink-2); }
+.kit-needs dd { margin: 0; font: 600 1.25rem var(--serif); text-align: right; }
+.kit-progress { height: 8px; border-radius: 99px; background: var(--line); overflow: hidden; margin: 14px 0 6px; }
+.kit-progress span { display: block; height: 100%; width: 0; background: var(--ok); transition: width .3s ease; }
+@media print {
+  [data-kit] .plan-side, [data-kit] .page-head { display: none !important; }
+  .kit-layout { display: block; padding: 0; }
+  .kit-group { break-inside: avoid; border-color: #000; }
+}
+
+/* ============ Canales alternativos (guía) ============ */
+.channels { display: grid; gap: 12px; margin: 20px 0; }
+.channel { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 16px 18px; background: var(--card); }
+.channel h3 { margin: 0 0 6px; font-size: 1.15rem; }
+.channel p { margin: 0; color: var(--ink-2); }
+.channel .meta { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.hashes { margin-top: 14px; font-size: .9rem; }
+.hashes summary { cursor: pointer; font-weight: 700; }
+.hashes code { font-family: var(--mono); font-size: .8rem; overflow-wrap: anywhere; }

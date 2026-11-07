@@ -63,6 +63,16 @@
       </fieldset>
 
       <fieldset>
+        <legend>Plan B: sin móviles</legend>
+        <p class="field-help">Si fallan las baterías o la malla, ¿cómo os comunicáis? Un walkie-talkie PMR446 no necesita licencia en Europa y llega a varios cientos de metros en ciudad. Acordad también una hora fija para encender los aparatos y ahorrar batería.</p>
+        <div class="fields">
+          <div class="field"><label for="walkie">Canal de walkie (PMR446)</label><input id="walkie" data-path="backup.walkie" maxlength="80" placeholder="Canal 7, subtono 12"></div>
+          <div class="field"><label for="radio">Radio para avisos oficiales</label><input id="radio" data-path="backup.radio" maxlength="80" placeholder="Emisora pública y su frecuencia"></div>
+          <div class="field full"><label for="checkin">Hora fija de contacto</label><input id="checkin" data-path="backup.checkIn" maxlength="80" placeholder="Cada hora en punto, durante 10 minutos"></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
         <legend>Teléfonos útiles</legend>
         <p class="field-help">El 112 funciona en toda la Unión Europea, incluso sin saldo. Añadid el colegio, el centro de salud, el trabajo…</p>
         <div data-numbers></div>

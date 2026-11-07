@@ -42,6 +42,19 @@ export interface EmergencyNumber {
   phone: string;
 }
 
+export interface BackupChannels {
+  /** Canal de walkie-talkie PMR446 (1–16) y subtono, p. ej. «Canal 7, subtono 12». */
+  walkie: string;
+  /** Emisora de radio para escuchar avisos oficiales, p. ej. «RNE 1 – 88.2 FM». */
+  radio: string;
+  /** Cuándo encender walkie/Posta para ahorrar batería, p. ej. «a las en punto, 10 min». */
+  checkIn: string;
+}
+
+export function emptyBackup(): BackupChannels {
+  return { walkie: "", radio: "", checkIn: "" };
+}
+
 export interface Plan {
   version: typeof PLAN_VERSION;
   household: string;
@@ -57,6 +70,8 @@ export interface Plan {
   notes: string;
   /** Fecha del último simulacro con Posta, ISO yyyy-mm-dd. */
   lastDrill: string;
+  /** Canales alternativos acordados para cuando no hay red. */
+  backup: BackupChannels;
   updatedAt: string;
 }
 
@@ -86,6 +101,7 @@ export function emptyPlan(now = new Date()): Plan {
     numbers: DEFAULT_NUMBERS.map((n) => ({ ...n })),
     notes: "",
     lastDrill: "",
+    backup: emptyBackup(),
     updatedAt: now.toISOString(),
   };
 }
@@ -155,6 +171,10 @@ export function parsePlan(input: unknown): Plan {
     numbers,
     notes: clean(input.notes, LIMITS.long * 3),
     lastDrill: ISO_DATE.test(lastDrill) ? lastDrill : "",
+    backup: (() => {
+      const b = isObj(input.backup) ? input.backup : {};
+      return { walkie: clean(b.walkie, LIMITS.short), radio: clean(b.radio, LIMITS.short), checkIn: clean(b.checkIn, LIMITS.short) };
+    })(),
     updatedAt: Number.isNaN(Date.parse(updatedAt)) ? new Date().toISOString() : updatedAt,
   };
 }
@@ -214,6 +234,11 @@ export function readiness(plan: Plan, today = new Date()): ReadinessItem[] {
       key: "outside",
       label: "Tenéis un contacto que vive lejos de la zona",
       done: filled(plan.outsideContact.name) && filled(plan.outsideContact.phone),
+    },
+    {
+      key: "backup",
+      label: "Tenéis un plan B sin móviles (walkie, radio u hora fija de contacto)",
+      done: filled(plan.backup.walkie) || filled(plan.backup.checkIn),
     },
     {
       key: "drill",

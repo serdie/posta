@@ -15,7 +15,10 @@ import {
 
 export const STORAGE_KEY = "posta.plan.v1";
 
-type PathKey = "nearPoint.name" | "nearPoint.address" | "farPoint.name" | "farPoint.address" | "outsideContact.name" | "outsideContact.phone" | "notes" | "lastDrill";
+type PathKey =
+  | "nearPoint.name" | "nearPoint.address" | "farPoint.name" | "farPoint.address"
+  | "outsideContact.name" | "outsideContact.phone" | "notes" | "lastDrill"
+  | "backup.walkie" | "backup.radio" | "backup.checkIn";
 
 export function loadPlan(): Plan {
   const raw = safeGet(STORAGE_KEY);
@@ -37,6 +40,9 @@ function getPath(plan: Plan, path: PathKey): string {
     case "outsideContact.phone": return plan.outsideContact.phone;
     case "notes": return plan.notes;
     case "lastDrill": return plan.lastDrill;
+    case "backup.walkie": return plan.backup.walkie;
+    case "backup.radio": return plan.backup.radio;
+    case "backup.checkIn": return plan.backup.checkIn;
   }
 }
 
@@ -50,6 +56,9 @@ function setPath(plan: Plan, path: PathKey, value: string): void {
     case "outsideContact.phone": plan.outsideContact.phone = value; break;
     case "notes": plan.notes = value; break;
     case "lastDrill": plan.lastDrill = value; break;
+    case "backup.walkie": plan.backup.walkie = value; break;
+    case "backup.radio": plan.backup.radio = value; break;
+    case "backup.checkIn": plan.backup.checkIn = value; break;
   }
 }
 
@@ -87,9 +96,12 @@ export function buildCard(plan: Plan, member: Member | null): HTMLElement {
   row("Avisar a", [plan.outsideContact.name, plan.outsideContact.phone].filter((s) => s.trim()).join(" · "));
   const nicks = plan.members.filter((m) => m.nick.trim()).map((m) => m.nick.trim());
   row("En Posta", nicks.join(", "));
-  for (const n of plan.numbers.filter((x) => x.phone.trim()).slice(0, 3)) row(n.label || "Teléfono", n.phone);
+  row("Walkie", plan.backup.walkie);
+  row("Contacto", plan.backup.checkIn);
+  row("Radio", plan.backup.radio);
+  for (const n of plan.numbers.filter((x) => x.phone.trim()).slice(0, 2)) row(n.label || "Teléfono", n.phone);
   if (member) row("Salud", member.care);
-  card.append(title, dl, h("p", "🟢 Estoy bien · 📍 Voy al punto · 🟠 Ayuda — usa los botones de estado de Posta. Emergencias: 112", "foot"));
+  card.append(title, dl, h("p", "Posta: 🟢 Estoy bien · 🆘 SOS. Sin red: SMS, walkie, 3 pitidos. Emergencias: 112", "foot"));
   return card;
 }
 
